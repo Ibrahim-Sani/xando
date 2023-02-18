@@ -65,8 +65,13 @@ if(!w && !squares.filter((square) => !square).length){
 
   return (
     <div>
-      <p>Hi {currentPlayer} it's your turn</p>
-      <p>Hi {currentPlayer} it's your turn</p>
+      {!winner &&<p>Hi {currentPlayer} it's your turn</p>}
+      {winner && winner !== 'BOTH'&& <p>Jahid you won {winner} </p>}
+      {winner && winner === 'BOTH' && (
+      <p>Jahid you're both winners</p>
+  )}
+     
+     
       <div className="grid">
         {Array(9)
           .fill(null)
